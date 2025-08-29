@@ -1,0 +1,112 @@
+{
+    "info": {
+      "name": "API Pedidos",
+      "_postman_id": "c2f7b1b3-7a20-4f7a-b5c1-4a2f7c0d9b10",
+      "description": "Endpoints para CRUD de pedidos (pedidos_clientes + pedidos_produtos).",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Listar pedidos",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/pedidos?page=1&itemsPerPage=10",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["pedidos"],
+            "query": [
+              { "key": "page", "value": "1" },
+              { "key": "itemsPerPage", "value": "10" }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Buscar pedidos por termo",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/pedidos?search=3&page=1&itemsPerPage=10",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["pedidos"],
+            "query": [
+              { "key": "search", "value": "3" },
+              { "key": "page", "value": "1" },
+              { "key": "itemsPerPage", "value": "10" }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Obter pedido por ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/pedidos/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["pedidos", "1"]
+          }
+        }
+      },
+      {
+        "name": "Criar pedido",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"cliente_id\": 1,\n  \"itens\": [\n    { \"produto_id\": 10, \"quantidade\": 2, \"preco\": 19.90 },\n    { \"produto_id\": 12, \"quantidade\": 1, \"preco\": 59.00 }\n  ]\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/pedidos",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["pedidos"]
+          }
+        }
+      },
+      {
+        "name": "Atualizar pedido",
+        "request": {
+          "method": "PUT",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"cliente_id\": 2,\n  \"itens\": [\n    { \"produto_id\": 12, \"quantidade\": 3, \"preco\": 58.50 }\n  ]\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/pedidos/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["pedidos", "1"]
+          }
+        }
+      },
+      {
+        "name": "Deletar pedido",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/pedidos/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["pedidos", "1"]
+          }
+        }
+      }
+    ]
+  }
+  
