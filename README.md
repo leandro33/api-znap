@@ -34,7 +34,7 @@ znap/
 
 1. Clone o repositório:
    ```bash
-   git clone https://seu-repo/znap.git
+   git clone https://github.com/leandro33/api-znap.git
    cd znap
    ```
 
