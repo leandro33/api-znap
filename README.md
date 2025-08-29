@@ -36,6 +36,8 @@ znap/
    ```bash
    git clone https://github.com/leandro33/api-znap.git
    cd znap
+   npm install
+   npm run dev
    ```
 
 2. Configure variáveis de ambiente se necessário:  
